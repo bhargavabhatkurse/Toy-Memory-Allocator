@@ -1,0 +1,15 @@
+# Uniform -O3 so every rung is measured on equal footing. No -march: there is no
+# SIMD here, so the ISA level does not affect the numbers.
+CXX      ?= g++
+CXXFLAGS ?= -std=c++17 -O3 -Wall -Wextra
+
+alloc: alloc.cpp
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+.PHONY: test bench clean
+test: alloc          ## randomized alloc/free correctness for all rungs
+	./alloc --test
+bench: alloc         ## throughput + utilization table
+	./alloc --bench
+clean:
+	rm -f alloc
