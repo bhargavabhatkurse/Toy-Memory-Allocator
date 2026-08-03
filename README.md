@@ -6,7 +6,9 @@ weakness of the rung below. The goal is to make allocator design tradeoffs
 *visible and measurable* — not to beat glibc.
 
 make # build (uniform -O3)
+
 make test # randomized alloc/free correctness, every rung
+
 make bench # throughput + utilization table
 
 ## Why not just use glibc malloc?
