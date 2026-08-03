@@ -21,7 +21,6 @@
 //  logic and not the operating system's page-fault handling.
 //
 //  Build: make
-//  Run:   ./alloc --test     (checks correctness)
 //         ./alloc --bench     (measures speed and memory usage)
 // ============================================================================
 #include <cstddef>
